@@ -1,59 +1,11 @@
 package com.algorithm.sort;
 /**
- * �鲢����
+ * 归并排序
  * @author sun
  *
  */
 public class MergeSort {
-	
-	/**
-	 * 
-	 * @param X�鲢����
-	 * @param Y��������
-	 * @param start1��һ�������е���ʼ�±�
-	 * @param start2�ڶ��������е���ʼ�±�
-	 * @param length�����еĳ���
-	 */
-	//һ�ι鲢
-	public static void merge(int[] X, int[] Y,int start1, int start2, int length) {
-		int i = start1;
-		int j = start2;
-		int k = start1;
-		while(i < start2 && j < start2+length && j < X.length) {   //��X���������������й鲢��Y��
-			if(X[i] > X[j])                                        //����Сֵ���Ƶ�Y��
-				Y[k++] = X[j++];
-			else
-				Y[k++] = X[i++];
-			
-			while(i<start2)       //��ǰһ��������ʣ��Ԫ�ظ��Ƶ�Y��
-				Y[k++] = X[i++];
-			
-			while(j<start2+length && j<X.length)    //����һ��������ʣ��Ԫ�ظ��Ƶ�Y��
-				Y[k++] = X[j++];
-		}
-	}
-	/**
-	 * һ�˹鲢
-	 * @param X
-	 * @param Y
-	 * @param length
-	 */
-	public static void mergepass(int[] X,int[] Y, int length) {
-		int i=0;
-		while(i<X.length-2*length+1) {
-			merge(X, Y,i,i+length,length);
-			i += 2*length;
-		}
-		
-		if(i+length < X.length) 
-			merge(X, Y,i,i+length,length);
-		else {
-			int j = i;
-			while(j < X.length)
-				Y[j++] = X[j++];
-		}
-	}
-	
+
 	public static void main(String[] args) {
 		int a[] = {2,7,5,8,9,3};
 		merge_sort(a);
@@ -64,7 +16,7 @@ public class MergeSort {
 	
 	
 	/**
-	 * �鲢����
+	 * 归并排序
 	 * @param attr
 	 */
 	public static void merge_sort(int[] attr) {
@@ -73,7 +25,7 @@ public class MergeSort {
 		merge_sort(attr,result,0,len-1);
 	}
 	/**
-	 * �����鲢
+	 * 归并排序
 	 * @param attr
 	 * @param result
 	 * @param start

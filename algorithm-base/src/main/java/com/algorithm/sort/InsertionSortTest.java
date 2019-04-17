@@ -1,6 +1,6 @@
 package com.algorithm.sort;
 
-//��������
+//插入排序
 public class InsertionSortTest {
 
 	public static void main(String[] args) {

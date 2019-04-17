@@ -1,6 +1,6 @@
 package com.algorithm.sort;
 
-//����
+//快速排序
 public class QuickSort {
 
 	public static void main(String[] args) {
@@ -33,5 +33,4 @@ public class QuickSort {
 			quickSort(table,i+1,end);
 		}
 	}
-
 }
