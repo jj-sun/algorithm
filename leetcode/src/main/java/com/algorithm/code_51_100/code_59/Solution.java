@@ -7,14 +7,16 @@ public class Solution {
         if(n == 0) {
             return ans;
         }
+        //定义四个方向，按照顺时针的顺序来进行定义
         int[] dr = {0, 1, 0, -1};
         int[] dc = {1, 0, -1, 0};
         int r = 0, c = 0, di = 0;
-
+        //遍历所有的位置
         for (int i=0; i<n * n; i++) {
             ans[r][c] = i + 1;
             int rr = r + dr[di];
             int cc = c + dc[di];
+            //如果符合条件，那就移动到下一个节点，否则，换方向
             if(rr >= 0 && rr < n && cc >=0 && cc < n && ans[rr][cc] == 0) {
                 r = rr;
                 c = cc;
